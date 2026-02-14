@@ -1,0 +1,30 @@
+package utils;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Properties;
+
+public class environmentConfig {
+
+
+    public static Properties environmentLoader(String filePath){
+
+        Properties properties = new Properties();
+        BufferedReader reader;
+        try {
+            reader = new BufferedReader(new FileReader(filePath));
+            try {
+                properties.load(reader);
+                reader.close();
+
+            } catch (IOException e) {
+                throw new RuntimeException("Failed to load Environment Property file: "+e);
+            }
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException("File Not found at: "+filePath);
+        }
+        return properties;
+    }
+}
