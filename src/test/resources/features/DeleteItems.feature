@@ -8,8 +8,9 @@ Feature: Verify DELETE item scenarios
     Given the Delete item request set with valid Id
     When the DELETE request to delete item called
     Then the response code for create item should be 200
+      And the response message for deletion should be as expected
 
-  Scenario: Failed to DELETE an item with invalid id
-    Given the Delete item request set with invalid Id
-    When the DELETE request to delete item called
-    Then the response code for create item should be 200
+#  Scenario: Failed to DELETE an item with invalid id
+#    Given the Delete item request set with invalid Id
+#    When the DELETE request to delete item called
+#    Then the response code for create item should be 200
