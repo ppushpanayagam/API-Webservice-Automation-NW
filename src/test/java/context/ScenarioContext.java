@@ -11,7 +11,7 @@ public class ScenarioContext {
     private ScenarioContext (){
         context = new HashMap<>();
     }
-    public ScenarioContext getInstance() {
+    public static ScenarioContext getInstance() {
         if (instance == null){
             synchronized (ScenarioContext.class){
                 if(instance == null){
@@ -22,7 +22,7 @@ public class ScenarioContext {
         return instance;
     }
 
-    public void getContext(String key, Object value){
+    public void setContext(String key, Object value){
         context.put(key, value);
     }
 

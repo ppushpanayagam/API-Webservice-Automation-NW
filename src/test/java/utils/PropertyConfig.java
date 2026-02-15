@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
-public class environmentConfig {
+public class PropertyConfig {
 
 
     public static Properties environmentLoader(String filePath){

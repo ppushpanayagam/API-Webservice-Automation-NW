@@ -1,7 +1,7 @@
 package utils;
 
-import models.Item;
-import models.ItemData;
+import requestModels.Item;
+import requestModels.ItemData;
 
 public class ItemBuilder {
 

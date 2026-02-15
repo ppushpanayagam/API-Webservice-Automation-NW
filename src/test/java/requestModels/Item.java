@@ -1,4 +1,4 @@
-package models;
+package requestModels;
 
 public class Item {
 

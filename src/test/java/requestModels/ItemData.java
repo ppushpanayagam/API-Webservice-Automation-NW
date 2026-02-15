@@ -1,4 +1,4 @@
-package models;
+package requestModels;
 
 import io.cucumber.core.internal.com.fasterxml.jackson.annotation.JsonProperty;
 
