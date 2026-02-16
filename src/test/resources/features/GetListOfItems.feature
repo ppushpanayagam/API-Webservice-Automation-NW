@@ -1,3 +1,4 @@
+@regression
 Feature: Verify Get List of Items Scenarios
 
   Scenario: Successfully GET list of Items
