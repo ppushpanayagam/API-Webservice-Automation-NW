@@ -1,3 +1,4 @@
+@regression
 Feature: Verify DELETE item scenarios
 
   Background:
@@ -9,10 +10,10 @@ Feature: Verify DELETE item scenarios
     When the DELETE request to delete item called
     Then the response code for create item should be 200
       And the response message for deletion should be as expected
-##      And the Get item request set with valid Id
-##    When the GET request for get item called
-##    Then the response message for deletion should be as expected
-#
+      And the Get item request set with valid Id
+    When the GET request for get item called
+    Then the response message for deletion should be as expected
+
   Scenario: Failed to DELETE an item with invalid id
     Given the Delete item request set with invalid "23222323"
     When the DELETE request to delete item called
