@@ -53,4 +53,9 @@ public class deleteCreatedItemSteps {
 
     }
 
+    @Then("the response code for delete item should be {int}")
+    public void the_response_code_for_delete_item_should_be_200(int statusCode){
+        Assert.assertEquals(response.statusCode(), StatusCode.expectedCode(statusCode).code);
+    }
+
 }
