@@ -26,6 +26,12 @@ public class createItemSteps {
     public void the_post_request_set_with_valid_details(
             String name, String year, String price, String cpuModel, String hardDiskSize
     ){
+        scenarioContext.setContext("name", name);
+        scenarioContext.setContext("year", year);
+        scenarioContext.setContext("price", price);
+        scenarioContext.setContext("cpuModel", cpuModel);
+        scenarioContext.setContext("hardDiskSize", hardDiskSize);
+
         item = ItemBuilder.buildItem(name, year, price, cpuModel, hardDiskSize);
     }
 

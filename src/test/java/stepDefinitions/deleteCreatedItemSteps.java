@@ -26,10 +26,10 @@ public class deleteCreatedItemSteps {
         itemId = scenarioContext.getContext("ItemId").toString();
     }
 
-    @Given("the Delete item request set with invalid Id")
-    public void the_Delete_item_request_set_with_invalid_Id(){
+    @Given("the Delete item request set with invalid {string}")
+    public void the_Delete_item_request_set_with_invalid_Id(String deletionId){
 
-//        itemId = "19999";
+        itemId = deletionId;
     }
 
     @When("the DELETE request to delete item called")
@@ -37,13 +37,20 @@ public class deleteCreatedItemSteps {
 
         response = deleteItem.deleteCreatedItem(itemId);
         deleteItemResponse = ResponseHelper.getDeletedItemResponse(response);
+
     }
 
     @Then("the response message for deletion should be as expected")
         public void the_response_message_for_deletion_should_be_as_expected(){
 
-            String responseMessage = deleteItemResponse.getMessage();
-            Assert.assertEquals(responseMessage, "Object with id = "+itemId+", has been deleted.");
-        }
+            if(deleteItemResponse.isSuccess()){
+                String responseMessage = deleteItemResponse.getMessage();
+                Assert.assertEquals(responseMessage, "Object with id = "+itemId+" has been deleted.");
+            } else if (deleteItemResponse.isError()) {
+                String responseMessage = deleteItemResponse.getError();
+                Assert.assertEquals(responseMessage, "Object with id = "+itemId+" doesn't exist.");
+            }
+
+    }
 
 }

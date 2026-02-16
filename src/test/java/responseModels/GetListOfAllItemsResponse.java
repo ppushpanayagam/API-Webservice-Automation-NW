@@ -1,9 +1,10 @@
 package responseModels;
 
 import io.cucumber.core.internal.com.fasterxml.jackson.annotation.JsonProperty;
-import requestModels.ItemData;
 
-public class GetItemResponse {
+import java.util.Map;
+
+public class GetListOfAllItemsResponse {
 
     @JsonProperty("id")
     private String id;
@@ -12,10 +13,7 @@ public class GetItemResponse {
     private String name;
 
     @JsonProperty ("data")
-    private ItemData data;
-
-    @JsonProperty ("error")
-    private String error;
+    private Map<String, Object> data;
 
     public String getId() {
         return id;
@@ -33,29 +31,20 @@ public class GetItemResponse {
         this.name = name;
     }
 
-    public ItemData getData() {
+    public Map<String, Object> getData() {
         return data;
     }
 
-    public void setData(ItemData data) {
+    public void setData(Map<String, Object> data) {
         this.data = data;
-    }
-
-    public String getError() {
-        return error;
-    }
-
-    public void setError(String error) {
-        this.error = error;
     }
 
     @Override
     public String toString() {
-        return "GetItemResponse{" +
+        return "GetListOfAllItemsResponse{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", data=" + data +
-                ", error='" + error + '\'' +
                 '}';
     }
 }
