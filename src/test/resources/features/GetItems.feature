@@ -1,3 +1,4 @@
+@regression
 Feature: Verify Get Created Items scenarios
 
   Background:
