@@ -1,3 +1,4 @@
+@regression
 Feature: Verify Create Item scenarios
 
   Scenario Outline: Successfully Create items with valid details
@@ -6,7 +7,7 @@ Feature: Verify Create Item scenarios
     Then the response code for create item should be 200
       And the item "<itemName>" is created successfully
     Examples:
-      | itemName | year | price | cpuModel | hardDiskSize |
-      | Apple    | 2025 | 10000 | 2025     | 500          |
-      | Samsung  | 2025 | 10000 | 2025     | 500          |
-      | Google   | 2025 | 20000 | 2025     | 1000         |
+      | itemName              | year | price | cpuModel | hardDiskSize |
+      | Apple Macbook Pro Max | 2024 | 3000  | Max      | 1TB          |
+      | Samsung               | 2025 | 2000  | Intel i9 | 2TB          |
+      | Google Chromebook     | 2025 | 1500  | Intel i5 | 500GB        |
