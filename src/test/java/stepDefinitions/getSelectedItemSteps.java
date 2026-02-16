@@ -52,8 +52,8 @@ public class getSelectedItemSteps {
         String hardDiskSize = scenarioContext.getContext("hardDiskSize").toString();
 
         Assert.assertEquals(getItemResponse.getName(), name);
-        Assert.assertEquals(getItemResponse.getData().getYear(), year);
-        Assert.assertEquals(getItemResponse.getData().getPrice(), price);
+        Assert.assertEquals(getItemResponse.getData().getYear(), Integer.parseInt(year));
+        Assert.assertEquals(getItemResponse.getData().getPrice(), Double.parseDouble(price));
         Assert.assertEquals(getItemResponse.getData().getCpuModel(), cpuModel);
         Assert.assertEquals(getItemResponse.getData().getHardDiskSize(), hardDiskSize);
     }
