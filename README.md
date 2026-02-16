@@ -7,7 +7,7 @@
     2. Clone and set up the framework
         Clone the repo: https://github.com/ppushpanayagam/API-Webservice-Automation-NW
         run: mvn clean install
-        run: clean test -DENV=DEV -Dcucumber.filter.tags=@regression
+        run: clean test -DENV=QA -Dcucumber.filter.tags=@regression
 
 2. Framework Configuration and Running the Tests
     1. Click on RUN / Debug dropdown button

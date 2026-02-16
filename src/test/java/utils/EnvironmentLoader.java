@@ -13,7 +13,7 @@ public class EnvironmentLoader {
     private EnvironmentLoader(){
         String env =System.getProperty("env", String.valueOf(EnvType.QA));
         switch(EnvType.valueOf(env)){
-            case QA ->properties =PropertyConfig.environmentLoader("src/test/resources/dev.properties");
+            case QA ->properties =PropertyConfig.environmentLoader("src/test/resources/qa.properties");
             case UAT ->properties =PropertyConfig.environmentLoader("src/test/resources/uat.properties");
         }
     }
