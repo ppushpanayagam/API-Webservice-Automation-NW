@@ -13,4 +13,4 @@ Feature: Verify Get Created Items scenarios
   Scenario: Failed to GET an item with invalid id
     Given the Get item request set with invalid Id "23223232"
     When the GET request for get item called
-    Then the response code for get item should be 200
+    Then the response code for get item should be 404
