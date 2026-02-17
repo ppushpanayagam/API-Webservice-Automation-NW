@@ -7,10 +7,10 @@ public class ItemData {
     private int year;
     private double price;
 
-    @JsonProperty("CPU Model")
+    @JsonProperty("CPU model")
     private String cpuModel;
 
-    @JsonProperty("Hard Disk Size")
+    @JsonProperty("Hard disk size")
     private String hardDiskSize;
 
     public ItemData(){}

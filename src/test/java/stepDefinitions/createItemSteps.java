@@ -11,6 +11,8 @@ import io.restassured.response.Response;
 import requestModels.Item;
 import org.testng.Assert;
 import responseModels.CreateItemResponse;
+import schemaValidatorConfig.SchemaFiles;
+import schemaValidatorConfig.SchemaValidator;
 import utils.ItemBuilder;
 import utils.ResponseHelper;
 
@@ -66,5 +68,6 @@ public class createItemSteps {
     public void the_item_is_created_successfully(String itemName){
         createItemResponse = ResponseHelper.getCreatedItemResponse(response);
         Assert.assertEquals(createItemResponse.getName(), itemName);
+        SchemaValidator.verify(response, SchemaFiles.CREATE_ITEM_FILE.fileName);
     }
 }

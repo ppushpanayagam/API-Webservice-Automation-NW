@@ -9,6 +9,8 @@ import io.cucumber.java.en.When;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import responseModels.GetItemResponse;
+import schemaValidatorConfig.SchemaFiles;
+import schemaValidatorConfig.SchemaValidator;
 import utils.ResponseHelper;
 
 public class getSelectedItemSteps {
@@ -40,6 +42,9 @@ public class getSelectedItemSteps {
     @Then("the response code for get item should be {int}")
     public void the_response_code_for_get_item_should_be_200(int statusCode){
         Assert.assertEquals(response.statusCode(), StatusCode.expectedCode(statusCode).code);
+        if(response.statusCode() == 200) {
+            SchemaValidator.verify(response, SchemaFiles.GET_CREATED_ITEM.fileName);
+        }
     }
 
     @Then("the response for the get item should be as expected")

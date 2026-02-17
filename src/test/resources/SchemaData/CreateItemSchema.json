@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/CreateItemResponse",
+  "definitions": {
+    "CreateItemResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/Data"
+        },
+        "createdAt": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ],
+      "title": "CreateItemResponse"
+    },
+    "Data": {
+      "type": ["object", "null"],
+      "additionalProperties": true,
+      "properties": {
+        "year": {
+          "type": "integer"
+        },
+        "price": {
+          "type": "number"
+        },
+        "cpuModel": {
+          "type": "string"
+        },
+        "hardDiskSize": {
+          "type": "string"
+        }
+      },
+      "title": "Data"
+    }
+  }
+}
