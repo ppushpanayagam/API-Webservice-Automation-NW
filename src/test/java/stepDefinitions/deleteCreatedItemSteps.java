@@ -49,7 +49,7 @@ public class deleteCreatedItemSteps {
                 Assert.assertEquals(responseMessage, "Object with id = "+itemId+" has been deleted.");
             } else if (deleteItemResponse.isError()) {
                 String responseMessage = deleteItemResponse.getError();
-                Assert.assertEquals(responseMessage, "Object with id = "+itemId+" doesn't exist.");
+                Assert.assertEquals(responseMessage, "Object with id="+itemId+" was not found.");
             }
 
     }

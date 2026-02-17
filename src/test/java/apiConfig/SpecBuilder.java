@@ -15,6 +15,7 @@ public class SpecBuilder {
                 .setBaseUri(EnvironmentLoader.getInstance().getBaseUrl())
                 .setBody(requestBody)
                 .setContentType(ContentType.JSON)
+                .addHeader("x-api-key", EnvironmentLoader.getInstance().getApiKey())
                 .log(LogDetail.ALL)
                 .build();
     }
@@ -22,6 +23,7 @@ public class SpecBuilder {
     public static RequestSpecification getRequestSpec(){
         return new RequestSpecBuilder()
                 .setBaseUri(EnvironmentLoader.getInstance().getBaseUrl())
+                .addHeader("x-api-key", EnvironmentLoader.getInstance().getApiKey())
                 .log(LogDetail.ALL)
                 .build();
     }
@@ -29,6 +31,7 @@ public class SpecBuilder {
     public static RequestSpecification deleteRequestSpec(){
         return new RequestSpecBuilder()
                 .setBaseUri(EnvironmentLoader.getInstance().getBaseUrl())
+                .addHeader("x-api-key", EnvironmentLoader.getInstance().getApiKey())
                 .log(LogDetail.ALL)
                 .build();
     }

@@ -30,4 +30,10 @@ public class EnvironmentLoader {
         if(prop != null) return prop;
         else throw new RuntimeException("Base URL is not found");
     }
+
+    public String getApiKey(){
+        String prop =properties.getProperty("API_KEY");
+        if(prop != null) return prop;
+        else throw new RuntimeException("Base URL is not found");
+    }
 }
