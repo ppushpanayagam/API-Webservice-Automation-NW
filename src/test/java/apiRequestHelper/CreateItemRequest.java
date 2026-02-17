@@ -6,7 +6,7 @@ import io.restassured.response.Response;
 
 public class CreateItemRequest {
 
-    public Response createItem(Object requestBody){
-        return ApiRequestConfig.post(requestBody, EndPoint.CREATE_ITEM.url);
+    public Response createItem(Object requestBody, String endPoint){
+        return ApiRequestConfig.post(requestBody, endPoint);
     }
 }

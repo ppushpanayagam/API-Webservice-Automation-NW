@@ -15,6 +15,18 @@ public class GetListOfAllItemsResponse {
     @JsonProperty ("data")
     private Map<String, Object> data;
 
+    @JsonProperty("timestamp")
+    private String timestamp;
+
+    @JsonProperty("status")
+    private String status;
+
+    @JsonProperty("path")
+    private String path;
+
+    @JsonProperty("error")
+    private String error;
+
     public String getId() {
         return id;
     }
@@ -39,12 +51,48 @@ public class GetListOfAllItemsResponse {
         this.data = data;
     }
 
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+    public String getError() {
+        return error;
+    }
+
+    public void setError(String error) {
+        this.error = error;
+    }
+
     @Override
     public String toString() {
         return "GetListOfAllItemsResponse{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", data=" + data +
+                ", timestamp='" + timestamp + '\'' +
+                ", status='" + status + '\'' +
+                ", path='" + path + '\'' +
+                ", error='" + error + '\'' +
                 '}';
     }
 }

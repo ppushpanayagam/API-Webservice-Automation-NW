@@ -10,6 +10,7 @@ import responseModels.DeleteItemResponse;
 import responseModels.GetItemResponse;
 import responseModels.GetListOfAllItemsResponse;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ResponseHelper {
@@ -30,6 +31,9 @@ public class ResponseHelper {
 
     public static List<GetListOfAllItemsResponse> getAllItemResponse(Response response){
         try{
+            if(response.statusCode() >= 400){
+                return new ArrayList<>();
+            }
             return objectMapper.readValue(response.asString(), new TypeReference<List<GetListOfAllItemsResponse>>() {
             });
         } catch (Exception e) {

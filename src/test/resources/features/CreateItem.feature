@@ -11,3 +11,10 @@ Feature: Verify Create Item scenarios
       | Apple Macbook Pro Max | 2024 | 3000  | Max      | 1TB          |
       | Samsung               | 2025 | 2000  | Intel i9 | 2TB          |
       | Google Chromebook     | 2025 | 1500  | Intel i5 | 500GB        |
+
+  Scenario: Failed to Create items with invalid endpoint
+    Given the Create Item POST request set with valid "Apple Macbook Pro Max" "2024" "3000" "Max" "1TB"
+      And the Create Item POST request set with invalid endpoint
+    When the POST request to add the item is called
+    Then the response code for create item should be 404
+      And the response status for create item should be "Not Found"
